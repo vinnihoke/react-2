@@ -13,7 +13,7 @@ const Numbers = () => {
   const [numberState, setNumberState] = useState(numbers);
 
   return(
-    numberState.map(number => <NumberButton number={number} />)
+    numberState.map((number, index) => <NumberButton key={index} number={number} />)
   )
 };
 

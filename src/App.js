@@ -11,6 +11,8 @@ import Display from "./components/DisplayComponents/Display"
 import Numbers from "./components/ButtonComponents/NumberButtons/Numbers";
 import Operators from "./components/ButtonComponents/OperatorButtons/Operators"
 import Specials from "./components/ButtonComponents/SpecialButtons/Specials";
+
+
 import { numbers, operators, specials } from './data';
 
 function App() {
@@ -24,6 +26,7 @@ function App() {
     <div className="container">
       <Logo />
       <div className="App">
+        <Display />
         <Numbers numbers={numbers} />
         <Operators operators={operators} />
         <Specials specials={specials} />
