@@ -26,6 +26,11 @@ footer, header, hgroup, menu, nav, section {
 html, body {
 	box-sizing: border-box;
 	line-height: 1;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
 }
 ol, ul {
 	list-style: none;
@@ -82,6 +87,8 @@ button {
 	background-color: navy;
 	color: white;
 	font-size: 20px;
+	border: 1px solid black;
+	transition: 500ms;
 }
 
 
@@ -89,7 +96,7 @@ button {
 	width: 375px;
 	height: 600px;
 	background-color: #aa0000;
-	border-radius: 10px;
+	border-radius: 20px;
 	padding: 25px;
 
 	.App{
@@ -109,6 +116,78 @@ button {
 			h3 {
 				margin-right: 30px;
 			}
+		}
+		// Numbers Order
+		.number-0{
+			@include grid(f)
+		}
+		.number-1{
+			@include grid(g)
+		}
+		.number-2{
+			@include grid(h)
+		}
+		.number-3{
+			@include grid(j)
+		}
+		.number-4{
+			@include grid(k)
+		}
+		.number-5{
+			@include grid(l)
+		}
+		.number-6{
+			@include grid(n)
+		}
+		.number-7{
+			@include grid(o)
+		}
+		.number-8{
+			@include grid(p)
+		}
+		.number-9{
+			@include grid(r)
+			width: 100%;
+			border-radius: 50px;
+		}
+		.number-10{
+			@include grid(s)
+		}
+
+		// Operator Order
+		.operator-0{
+			@include grid(e);
+			background-color: grey;
+		}
+		.operator-1{
+			@include grid(i);
+			background-color: grey;
+		}
+		.operator-2{
+			@include grid(m);
+			background-color: grey;
+		}
+		.operator-3{
+			@include grid(q);
+			background-color: grey;
+		}
+		.operator-4{
+			@include grid(t);
+			background-color: grey;
+		}
+
+		//Specials Order
+		.specials-0{
+			@include grid(b);
+			background-color: dodgerblue;
+		}
+		.specials-1{
+			@include grid(c);
+			background-color: dodgerblue;
+		}
+		.specials-2{
+			@include grid(d);
+			background-color: dodgerblue;
 		}
 		
 	}

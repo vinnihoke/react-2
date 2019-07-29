@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.scss";
 
 // STEP 4 - import the button and display components
@@ -13,7 +13,7 @@ import Operators from "./components/ButtonComponents/OperatorButtons/Operators"
 import Specials from "./components/ButtonComponents/SpecialButtons/Specials";
 
 
-import { numbers, operators, specials } from './data';
+import { numbers, operators, specials, display } from './data';
 
 function App() {
   // STEP 5 - After you get the components displaying using the provided data file, write your state hooks here.
@@ -22,14 +22,20 @@ function App() {
   // the "5" button, or the operator if they click one of those buttons) and then call your setter function to update state.
   // Don't forget to pass the functions (and any additional data needed) to the components as props
 
+  const [displayValue, setDisplayValue] = useState('0')
+
+  const updateValue = param => {
+    setDisplayValue(displayValue === '0' ? param : displayValue + param); 
+  }
+
   return (
     <div className="container">
       <Logo />
       <div className="App">
-        <Display />
-        <Numbers numbers={numbers} />
-        <Operators operators={operators} />
-        <Specials specials={specials} />
+        <Display displayValue={displayValue}/>
+        <Numbers  updateValue={updateValue}/>
+        <Specials updateValue={updateValue}/>
+        <Operators updateValue={updateValue}/>
         {/* STEP 4 - Render your components here and be sure to properly import/export all files */}
       </div>
     </div>

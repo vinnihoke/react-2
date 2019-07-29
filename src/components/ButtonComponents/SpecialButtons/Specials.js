@@ -6,7 +6,7 @@ import SpecialButton from './SpecialButton';
 
 //Import your array data to from the provided data file
 
-const Specials = () => {
+const Specials = ({ updateValue }) => {
   // STEP 2 - add the imported data to state
   const [specialsState, setSpecialsState] = useState(specials);
 
@@ -15,7 +15,7 @@ const Specials = () => {
 component matching the name on the provided file. Pass
 it any props needed by the child component*/}
   return (
-       specialsState.map((special, index) => <SpecialButton key={index} special={special} />)
+       specialsState.map((special, index) => <SpecialButton key={index} special={special} index={index} updateValue={() => updateValue(special)}/>)
   );
 };
 
